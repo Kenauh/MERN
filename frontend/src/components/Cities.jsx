@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import logo from '../images/MYtineraryLogo.png';
+import homeIcon from '../images/home.png';
 
 const Cities = () => {
   const [cities, setCities] = useState([]);
@@ -23,7 +25,8 @@ const Cities = () => {
     <div>
       {/* NAVBAR */}
       <nav style={{ backgroundColor: '#1a1a2e', padding: '12px 20px', display: 'flex', alignItems: 'center' }}>
-        <span style={{ color: '#fff', fontSize: '1.4rem', fontWeight: 'bold' }}>MYtinerary</span>
+        <img src={logo} alt="Logo" width={40} height={40} style={{ borderRadius: '50%' }} />
+        <span style={{ color: '#fff', fontSize: '1.4rem', fontWeight: 'bold', marginLeft: '10px' }}>MYtinerary</span>
         <button
           onClick={() => navigate('/')}
           style={{
@@ -33,11 +36,13 @@ const Cities = () => {
             borderRadius: '50%',
             width: '44px',
             height: '44px',
-            fontSize: '1.2rem',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
-          🏠
+          <img src={homeIcon} alt="Home" width={22} height={22} style={{ filter: 'invert(1)', mixBlendMode: 'screen' }} />
         </button>
       </nav>
 
